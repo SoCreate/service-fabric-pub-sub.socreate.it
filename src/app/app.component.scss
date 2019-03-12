@@ -1,0 +1,194 @@
+@import 'scss/colors';
+@import 'scss/mediaqueries';
+
+$app__width:   73.125em;
+$app__spacing: 2.5em;
+
+
+
+
+:host {
+  background: $color__01--01;
+  color: $color__01--05;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  app-github-corner /deep/ svg {
+    position: relative;
+    z-index: 1;
+  }
+
+}
+
+.header {
+  display: flex;
+  margin: 0 auto;
+  max-width: $app__width;
+  padding: $app__spacing;
+  padding: 3.5em $app__spacing 2em;
+  position: relative;
+  width: 100%;
+
+  &::before {
+    background: $color__01--02;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: $app__spacing;
+    position: absolute;
+    right: $app__spacing;
+  }
+
+  // Logo
+  &__logo {
+    display: block;
+    width: 15.5em;
+  }
+
+  // Nav
+  &__nav {
+    margin-left: auto;
+    padding-top: 0.5em;
+  
+    &Item {
+      color: $color__01--06;
+      font-size: 80%;
+      margin-left: 1.375em;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      z-index: 2;
+
+      &:hover,
+      &:active {
+        color: $color__02--01;
+        text-decoration: none;
+      }
+
+      // Active
+      &--active {
+        border-bottom: solid 2px $color__02--01;
+        font-weight: bold;
+
+        &:hover {
+          color: $color__01--06;
+          cursor: default;
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  margin: -1px auto 0 auto;
+  max-width: $app__width;
+  overflow-x: hidden;
+  padding: $app__spacing;
+  position: relative;
+  width: 100%;
+}
+
+.footer {
+  background: $color__01--03;
+  position: relative;
+
+  &::before {
+    background: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20version%3D%221.1%22%20x%3D%220px%22%20y%3D%220px%22%20width%3D%221280px%22%20height%3D%2214px%22%20viewBox%3D%220%200%201280%2014%22%20enable-background%3D%22new%200%200%201280%2014%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cpath%20fill%3D%22%23E6E6E6%22%20d%3D%22M1280%2C14V3.3c-0.9%2C0-1.8-0.1-2.7-0.1c-1.1%2C0-2.3%2C0-3.5%2C0c-0.6%2C0-1.3%2C0-1.9%2C0c-0.6%2C0-1.4-0.7-1.7-0.7%0A%09c-0.2%2C0-0.3%2C0-0.5%2C0c-0.3%2C0-0.7%2C0-1%2C0.1c-0.7%2C0-1.4%2C0.1-2.2%2C0.1c-1.6%2C0-3.4%2C0.1-5.3%2C0.1c-3.8%2C0.1-8.1%2C0.1-12.3%2C0.3%0A%09c-8.5%2C0.3-17.1%2C0.8-21.6%2C2.3c-1.6-0.4-49.2%2C1.4-66.4-0.4l1.7-0.9c-4.1%2C0.3-7.2%2C1.7-12.4%2C0.8c0.3-0.4%2C1.7-0.9-0.3-0.9%0A%09c-2.2%2C0.3-11%2C1.6-16.5%2C1l4.7-1c-21.7-1.2-33.2%2C2.5-51.4%2C3.1c0-2.6-17-3.5-25.5-3.9l0.3-0.4c-25.2-0.3-42.8%2C2.2-66.2%2C3.2%0A%09c-14.5-2.9-49.1-1.2-72.4-2.8c3.6%2C0.5-0.6%2C2.1-4.7%2C2.3C912.6%2C5%2C903%2C7.4%2C903.8%2C5l2%2C0c-4.1-2.4-15.4-1.7-24.1-1.8l-1.4%2C3.2%0A%09c-23-4.6-60.1%2C1.7-72.7-2.4c-5.5%2C0.8-12.4%2C0.8-17.9%2C1.6l0.3-1.7c-15.3-0.4-23-0.6-42-0.2l3.9-1.2c-10.7-0.1-13.5%2C4.9-23.4%2C5l-3-2.5%0A%09c-18.7%2C0-37.6-2.2-56%2C0.1c0.3-0.4%2C0.9-1.1%2C3.9-1.2c-8.5-0.1-32.2-1.6-31%2C1.4c-2.2-1.7-19.6%2C0.2-29.1%2C1.1l1.6-1.7%0A%09c-8.5%2C2.1-8.8%2C2.7-20.7%2C3.3c-2.6-0.2-2.5-1.2%2C0.4-1c-8.4-0.7-6.8%2C1.6-17.9%2C0.8l4.2-1.1c-9.7-0.1-8.9%2C0.4-14.2%2C1.7%0A%09C560.7%2C9%2C548.4%2C7.9%2C547%2C6.4c-1.3%2C0.9-6.6%2C2.2-12.3%2C1.7c-0.8-0.6%2C1.3-0.9%2C2.3-1.1c-16.1-1.1-24%2C1.9-35.1%2C0.3c-0.2-0.6-4.3-1-14.4-1.7%0A%09c-0.5-0.1-1-0.3-1.3-0.5l1-0.2c-2.3-0.2-4.4%2C0-6.4%2C0.2c-3.2-0.3-11.3%2C1.2-6.3%2C1.2c-4.1%2C0.9-8.3%2C1.6-14.1%2C0.6%0A%09c-2.7%2C1.1-5.6%2C2.2-7.2%2C2.7c-7.1-2.4-20.7-3.6-22.6-5.1c-15.8%2C0.9-37.2%2C0.6-47.1%2C3.8c-4.5%2C0.4-26.3-1.8-28.5%2C0.4%0A%09c-11.3-1%2C6.4-2-9.2-1.7l2.1-0.7c-30-3.5-48.9%2C5.3-81.6%2C1.3c1.1%2C0.2%2C1.8%2C0.3%2C2.1%2C0.5c-38.6-2-79.6%2C1.9-117.7-1.3%0A%09c-10.8-0.6-12%2C0.8-18.6%2C1.8l-2.3-1.8l-11.3%2C2.1c-16%2C1.5-27.8-4.4-48-1.6l2.6%2C1.2c-7.3-0.2-23.1%2C0.7-21.9-0.7%0A%09c-0.7%2C0.2-2.4%2C1.3-5.2%2C0.6l-0.2-0.9L27.9%2C9.5C14.1%2C8.8%2C30.1%2C5.7%2C9.9%2C5.5C7.1%2C5.6%2C3.4%2C6.1%2C0%2C6.6L0%2C14H1280z%22/%3E%0A%3C/svg%3E%0A);
+    content: "";
+    height: 14px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -14px;
+    z-index: 15;
+  }
+
+  // Content
+  &__content {
+    margin: 0 auto;
+    font-size: 80%;
+    max-width: $app__width;
+    padding: 5em $app__spacing;
+    text-align: center;
+  }
+
+  // Link
+  &__link {
+    color: $color__03--01;
+
+    &:hover {
+      color: $color__02--01;
+      text-decoration: none;
+    }
+
+  }
+
+  // Brand
+  &__brand {
+    display: block;
+    margin: 3em auto 0;
+    width: 11em;
+
+    &Logo {
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+
+
+// Mediaqueries
+// _________________________________________________________________________________________
+@media (max-width: $mediaquery__appNav--hidden) {
+
+  .header {
+    display: block;
+    padding-top: 2.5em;
+    text-align: center;
+
+    &::before {
+      left: 0;
+      right: 0;
+    }
+
+    &__logo {
+      margin: 0 auto;
+    }
+
+    &__nav {
+      padding-top: 1.5em;
+    }
+
+  }
+
+  .content {
+    padding-top: 3.2em;
+  }
+
+}
+
+@media (max-width: $mediaquery__content--reduce) {
+
+  app-github-corner {
+    display: block;
+    min-width: 320px;
+    position: relative;
+
+    /deep/ svg {
+      height: 50px;
+      width: 50px;
+    }
+
+  }
+
+}

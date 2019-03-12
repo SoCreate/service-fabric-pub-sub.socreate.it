@@ -1,0 +1,80 @@
+<a
+  (click)="setShowNav(true)"
+  title="Menu"
+  class="navShow">
+    <span class="navShow__label">Menu</span>
+</a>
+<aside
+  [ngClass]="{
+    'nav--open': !navClosed,
+    'nav--close': navClosed}"
+  class="nav">
+  <div class="nav__block">
+    <a
+      (click)="setShowNav(false)"
+       title="Close Menu"
+      class="nav__close">
+      <span class="nav__closeLabel">Close Menu</span>
+    </a>
+    <h5 class="nav__title">Getting Started</h5>
+    <a
+      routerLink="/docs/getting-started/installation"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Installation
+    </a>
+  </div>
+  <div class="nav__block">
+    <h5 class="nav__title">How To</h5>
+    <a
+      routerLink="/docs/how-to/add-to-project"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Add To Project
+    </a>
+    <a
+      routerLink="/docs/how-to/data-contracts"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Data Contracts
+    </a>
+    <a
+      routerLink="/docs/how-to/publish-messages"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Publish Messages
+    </a>
+    <a
+      routerLink="/docs/how-to/subscribe-to-messages"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Subscribe To Messages
+    </a>
+    <a
+      routerLink="/docs/how-to/routing"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Routing
+    </a>
+  </div>
+
+  <div class="nav__block">
+      <h5 class="nav__title">Upgrading</h5>
+      <a
+        routerLink="/docs/upgrading/version-8"
+        routerLinkActive="nav__item--active"
+        class="nav__item"
+        (click)="setShowNav(false)">
+        To Version 8
+      </a>
+    </div>
+</aside>
+<article class="content">
+  <router-outlet></router-outlet>
+</article>

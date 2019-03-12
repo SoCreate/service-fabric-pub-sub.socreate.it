@@ -1,0 +1,64 @@
+<h1>Upgrading To Version 8</h1>
+<section>
+  <p>Significant changes were made in v8.0.0, including breaking changes to interfaces and tools.</p>
+  <ul>
+    <li>BrokerActor and RelayBrokerActor were removed. Actors don't make a good Broker, use BrokerService instead.</li>
+    <li>ServiceFabric.PubSubActors.Interfaces library was removed. Only the main library is required now.</li>
+    <li>Obsolete extension methods were removed.</li>
+    <li>Helper classes were removed and replaced with <code>BrokerClient</code>.</li>
+    <li>V2 is the only supported Service Fabric Remoting version.</li>
+  </ul>
+  <h4>Tips</h4>
+  <p>Here are some tips to help you through the upgrade process:</p>
+  <ol>
+    <li>
+      <strong>Upgrade Remoting To V2</strong>
+      <ul>
+        <li>v8.0 only supports remoting V2. If you are using .NET Standard, you should already be using V2 and you can skip this step.</li>
+        <li>
+            Refer to documentation here:
+            <a href="https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-services-communication-remoting#upgrade-from-remoting-v1-to-remoting-v2">Upgrade From Remoting V1 to Remoting V2</a>
+        </li>
+        <li>
+          Upgrade the Broker first. Override <code>BrokerService.CreateServiceReplicaListeners()</code> to use the extension method
+          mentioned in the above link so you can use the assembly attribute to set up listening on V1 and V2.</li>
+        <li>
+          Upgrade Publisher and Subscriber services. Use the <code>useRemotingV2</code> option when creating the BrokerServiceLocator
+          that is used by Helper classes.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Upgrade the Broker</strong>
+      <ul>
+        <li>Remove the ServiceFabric.PubSubActors.Interfaces library and upgrade the ServiceFabric.PubSubActors library to 8.0.</li>
+        <li>
+          Publish message and Receive message are backwards compatible, so update BrokerService first and publishers and subscribers
+          should continue to function.
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Upgrade Subscribers</strong>
+      <ul>
+        <li>
+          Register/Unregister has been replaced by Subscribe/Unsubscribe, so you won't be able to subscribe/unsubscribe until you
+          update subscriber services.
+        </li>
+        <li>Remove the ServiceFabric.PubSubActors.Interfaces library and upgrade the ServiceFabric.PubSubActors library to 8.0.</li>
+        <li>
+            Extension methods and helper classes have been removed. If you are using any of them in your Subscriber services, they
+            will need to be refactored to use the BrokerClient or one of the Subscriber base classes (see documentation above).
+        </li>
+      </ul>
+    </li>
+    <li>
+      <strong>Upgrade Publishers</strong>
+      <em>(Optional, publishing is backwards compatible)</em>
+      <ul>
+        <li>Remove the ServiceFabric.PubSubActors.Interfaces library and upgrade the ServiceFabric.PubSubActors library to 8.0.</li>
+        <li>Extension method and helper classes have been removed. Use BrokerClient.PublishMessageAsync() instead.</li>
+      </ul>
+    </li>
+  </ol>
+</section>

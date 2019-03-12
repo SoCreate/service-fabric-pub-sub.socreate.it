@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Microsoft Service Fabric Pub/Sub</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59044806-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'UA-59044806-4');
+  </script>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@socreate">
+  <meta name="twitter:creator" content="@socreate">
+  <meta name="twitter:image" content="@socreate">
+  <meta name="twitter:image:alt" content="http://service-fabric-pub-sub.socreate.it/assets/social/service-fabric-pub-sub-twitter.jpg">
+  <meta property="fb:app_id" content="1384123038328081">
+  <meta property="og:url" content="http://service-fabric-pub-sub.socreate.it">
+  <meta property="og:title" content="Microsoft Service Fabric Pub/Sub">
+  <meta
+    property="og:description"
+    content="
+      Do you want to create an Event Driven Architecture while using Azure Service Fabric? Do you need to reliably broadcast messages
+      between Actors and Services? This code will help you do that. It supports both Actors and Services as publishers and subscribers.">
+  <meta property="og:image" content="http://service-fabric-pub-sub.socreate.it/assets/social/service-fabric-pub-sub-facebook.png">
+  <meta property="og:site_name" content="Microsoft Service Fabric Pub/Sub Documentation">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root>
+    <style>
+      html {
+        background: #fff;
+      }
+      app-root {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+      }
+      h1 {
+        color: #666;
+        font-size: 2.827em;
+        font-weight: normal;
+        padding: 1em 1em 3em;
+        text-align: center;
+      }
+      .loader,
+      .loader:after {
+        border-radius: 50%;
+        width: 10em;
+        height: 10em;
+      }
+      .loader {
+        display: block;
+        margin: 3.75rem auto;
+        font-size: 0.625rem;
+        position: relative;
+        border: 1.1em solid rgba(0, 0, 0, 0.05);
+        border-left: 1.1em solid #ccc;
+        transform: translateZ(0);
+        animation: loader 1.1s infinite linear;
+      }
+      @keyframes loader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <h1>
+      <span class="loader"></span>
+      Loading...
+    </h1>
+  </app-root>
+</body>
+</html>

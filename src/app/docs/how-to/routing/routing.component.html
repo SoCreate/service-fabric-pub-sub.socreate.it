@@ -1,0 +1,20 @@
+<h1>Routing</h1>
+<section markdown>
+  <blockquote>
+      This experimental feature works only when using the <code>DefaultPayloadSerializer</code>
+  </blockquote>
+  
+  Routing adds support for an additional subscriber filter, based on message content.
+  
+  #### Example
+  Given this message type:
+</section>
+<div markdown path="content/docs/how-to/routing-message-type.md"></div>
+<section markdown>
+  And given a subscriber that is interested in Customers named 'Customer1'. The subscription would be registered like this:
+</section>
+<div markdown path="content/docs/how-to/routing-subscription.md"></div>
+<section markdown>
+  The routing key is queried by using JToken.SelectToken. More info
+  <a href="https://www.newtonsoft.com/json/help/html/SelectToken.htm">here</a>.
+</section>

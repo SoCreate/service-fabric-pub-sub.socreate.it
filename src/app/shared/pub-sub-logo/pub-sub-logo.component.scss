@@ -1,0 +1,51 @@
+@import '../../scss/colors';
+@import '../../scss/visually-hidden';
+
+
+
+
+.logo {
+    max-width: 100%;
+
+    &__box {
+        
+
+        &--01 {
+            fill: #F78600;
+        }
+
+        &--02 {
+            fill: $color__02--01;
+        }
+
+        &--03 {
+            fill: $color__03--01;
+        }
+
+        &--04 {
+            fill: $color__03--02;
+        }
+
+    }
+
+    &__letter { 
+        fill: $color__01--01;
+    }
+
+    &__highlight {
+    
+        &--01 {
+            fill: $color__04--01;
+        }
+
+        &--02 {
+            fill: $color__04--02;
+        }
+
+    }
+
+    &__label {
+        @include mixin__visuallyHidden;
+    }
+
+}

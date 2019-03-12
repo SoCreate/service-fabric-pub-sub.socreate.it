@@ -1,0 +1,48 @@
+<app-github-corner repositoryUrl="https://github.com/SoCreate/service-fabric-pub-sub"></app-github-corner>
+<header class="header">
+  <a 
+    *ngIf="route !== ''"
+    routerLink="/"
+    class="header__link">
+    <app-pub-sub-logo class="header__logo"></app-pub-sub-logo>
+  </a>
+  <nav class="header__nav">
+    <a 
+      routerLink="/" 
+      routerLinkActive="header__navItem--active" 
+      [routerLinkActiveOptions]="{exact:true}"
+      class="header__navItem">Home</a>
+    <a 
+      routerLink="/docs" 
+      routerLinkActive="header__navItem--active"
+      class="header__navItem">Docs</a>
+    <a 
+      routerLink="/about" 
+      routerLinkActive="header__navItem--active"
+      class="header__navItem">About</a>
+  </nav>
+</header>
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="footer">
+    <div class="footer__content">
+      Built with&nbsp; ❤️ &nbsp;by
+      <a
+        href="https://github.com/loekd"
+        class="footer__link">
+        loekd
+      </a>
+      and the team at 
+      <a 
+        href="https://socreate.it"
+        class="footer__link">
+        SoCreate
+      </a>
+      <a
+        class="footer__brand" 
+        href="https://socreate.it">
+        <socreate-logo href="footer__logo"></socreate-logo>
+      </a>    
+    </div>
+  </footer>
