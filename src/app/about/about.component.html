@@ -6,7 +6,7 @@
     At SoCreate we are big fans of Service Fabric. It is an amazingly powerful orchestrator that provides you with the
     ability to run containers, guest executables, or native stateful/stateless microservices you write specifically for
     Service Fabric. When it came time to build out the SoCreate infrastructure, we needed to choose how we would provide
-    messaging between our microservices. We looked at lots of options, from Redis, to Kafka, to RebbitMQ. All of those
+    messaging between our microservices. We looked at lots of options, from Redis, to Kafka, to RabbitMQ. All of those
     projects looked great and were widely used, but we knew there would be some time involved in learning to run, manage,
     and monitor them which we had to consider. At the same time, we also considered how much effort it would take to
     build a native Service Fabric reliable service that would provide messaging for us. Before we decided which way to
@@ -16,7 +16,7 @@
     do and we started working closely with Loek on the changes. He was really excited to work with us and we were with
     him. We have since made several improvements to the project and we have a lot more coming. Due to the volume of
     changes and our plans to continue to contribute and support the project over the long term, we all came to the
-    conclusion that is might make sense for SoCreate to manage the project. Going forward, the team at SoCreate will
+    conclusion that it might make sense for SoCreate to manage the project. Going forward, the team at SoCreate will
     continue to work closely with Loek as we add new features, bring more awareness, and work with the community to see
     how far we can take this project. We are all excited to have a native messaging service built on Service Fabric
     that we can use as a part of our core infrastructure and we hope others in the Service Fabric community find it as
@@ -41,7 +41,7 @@
     <div class="item__content">
       <h5 class="item__title">
         <a
-          [href]="item.twitterUrl"
+          [href]="item.githubUrl"
           class="item__titleLink">
           {{item.firstName}} {{item.lastName}}
         </a>

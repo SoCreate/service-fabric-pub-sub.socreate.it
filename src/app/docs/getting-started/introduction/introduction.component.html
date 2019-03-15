@@ -1,0 +1,31 @@
+<h1>Introduction</h1>
+<p>
+  Service Fabric allows you to deploy many apps (microservices) in a single "Cluster".  Service Fabric provides a mechanism
+  for services to communicate with each other called "Service Remoting".  This package implements the Publish/Subscribe
+  pattern to implement reliable asynchronous messaging between services using Service Remoting V2.
+</p>
+<img
+  src="http://service-fabric-pub-sub.socreate.it/assets/charts/pub-sub-diagram.svg"
+  alt="
+    Publishers can be reliable actors or services using an intermediate broker stateful service to broadcast to reliable
+    actor or service subscribers"
+  style="border: 0; margin: 1em 0 2em" />
+<section markdown>
+  ##### The Broker
+  At the center of the Pub/Sub pattern is a Broker.  Service Fabric Pub/Sub uses a Stateful Reliable Service as a Broker.
+
+  ##### Publishers
+  Publishers publish a message to the Broker indicating that an event has occurred.  They have no knowledge of what happens
+  to the message after delivering it to the Broker.  Publishers never communicate directly to Subscribers.  Publishers can
+  be any Reliable Service or Actor in the Cluster.
+
+  ##### Subscribers
+  Subscribers subscribe to a message type through the Broker.  The Broker delivers messages received by Publishers to Subcribers
+  who subscribe to that message type.  Subscribers can be any Reliable Service or Actor in the Cluster.  Subscribers can
+  subscribe to multiple message types and multiple Subscribers can subscribe to the same message type.
+
+  ##### Data Contracts
+  Messages are simple, serializable POCO objects.  Publishers and Subscribers never communicate directly, but they do need a shared knowledge
+  of these message object types.  You will need to define these types in a library that can be shared across all Publishers
+  and Subscribers.
+</section>

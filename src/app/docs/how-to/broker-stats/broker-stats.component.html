@@ -1,0 +1,22 @@
+<h1>Broker Stats</h1>
+<section markdown>
+  The BrokerClient offers a way to get some basic information about what is going on in the BrokerService. Calling
+  `BrokerClient.GetBrokerStats()` provides a Dictionary with one item for each queue (subscription) that the Broker is managing.
+  The key is the name of the queue and the value is a list of QueueStat objects. Each QueueStat object is a snapshot of
+  the state of the queue at the time the request was made. The QueueStat object includes the name of the service, the total
+  number of messages received, the total number of messages delivered, and time the snapshot was taken. The totals are
+  cumulative from the moment the queue was created.
+
+  A new snapshot is added each time `BrokerClient.GetBrokerStats()` is called, so the user has control over the polling frequency.
+  The BrokerClient keeps a fixed number of snapshots per queue defined by BrokerClient.QueueStatCapacity, which defaults
+  to 100. When the 101st snapshot is created, the oldest one will be trimmed from the list.
+
+  What information can you get:
+
+  * A list of all queues (subscriptions) and the subscriber services they serve.
+  * The total number of messages received and delivered, as well as the total number of delivery failures for each queue.
+  * If the difference between the total received and the total delivered is growing, the queue is taking in messages faster than they can be delivered (or the subscriber is down).
+  * With a little extra processing, the number of messages received and delivered in a given time period can be calculated. A UI could graph this data to show the load on each queue over time.
+
+  Armed with a list of queueNames, you can use `BrokerClient.UnsubscribeByQueueNameAsync()` to unsubscribe on behalf of another service.
+</section>

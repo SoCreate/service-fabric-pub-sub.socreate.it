@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-add-to-project',
-  templateUrl: './add-to-project.component.html'
+  selector: 'app-introduction',
+  templateUrl: './introduction.component.html'
 })
-export class AddToProjectComponent implements OnInit {
+export class IntroductionComponent implements OnInit {
 
   constructor() { }
 

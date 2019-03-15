@@ -1,3 +1,4 @@
+###### SubscribingActor
 ```csharp
 [ActorService(Name = nameof(SubscribingActor))]
 [StatePersistence(StatePersistence.None)]
@@ -5,7 +6,7 @@ internal class SubscribingActor : Actor, ISubscriberActor
 {
     private readonly IBrokerClient _brokerClient;
 
-    public SubscribingActor(ActorService actorService, ActorId actorId, IBrokerClient brokerClient)
+    public SubscribingActor(ActorService actorService, ActorId actorId, IBrokerClient brokerClient = null)
         : base(actorService, actorId)
     {
         _brokerClient = brokerClient ?? new BrokerClient();

@@ -1,0 +1,20 @@
+<h1>Set Up a Subscriber Service</h1>
+<section markdown>
+  *In this example we are using the base class to set up a stateless service subscriber.  For more ways to set up a subscriber, see [Subscribe To Messages](/docs/how-to/subscribe-to-messages).*
+
+  Add a Reliable Stateless Service project called 'SubscribingStatelessService'.
+
+  Install the Nuget package:
+  ```
+  dotnet add package ServiceFabric.PubSubActors --version 8.0.0
+  ```
+
+  Add a project reference to the shared data contracts library 'DataContracts'.
+
+  Replace the `SubscribingStatelessService` with the following code:
+</section>
+<div markdown path="content/docs/how-to/subscribing-services-with-base-class.md"></div>
+<section markdown>
+  The SubscriberStatelessServiceBase class automatically handles subscribing to the message types that were
+  registered using the `Subscribe` attribute when the service is 'opened'.
+</section>

@@ -1,0 +1,24 @@
+<h1>Broker Configuration</h1>
+<section markdown>
+  The BrokerService provides the following properties that can be set by the derived class to configure the behavior of the BrokerService.
+
+  * ServiceEventSourceMessageCallback : When Set, this callback will be used to trace Service messages to.
+  * ListenerName : The name that the `ServiceReplicaListener` instance will get.
+  * DueTime : The interval to wait before starting to publish messages. (Default: 5s after Activation)
+  * Period : The interval to wait between batches of publishing messages. (Default: 5s)
+  * MaxProcessingPeriod : The maximum period to process messages before allowing enqueuing. (Default 3s)
+  * MaxDequeuesInOneIteration : The maximum number of messages to de-queue in one iteration of process queue. (Default 100)
+</section>
+<section markdown>
+  #### Broker Events
+  The following events can be subscribed to by the ulser to implement additional logging or other functionality.
+
+  * Subscribed
+  * Unsubscribed
+  * MessageReceived
+  * MessageDelivered
+  * MessageDeliveryFailed
+
+  To subscribe to events, override the SetUpEvents() method.
+</section>
+<div markdown path="content/docs/how-to/configure-broker-events.md"></div>
