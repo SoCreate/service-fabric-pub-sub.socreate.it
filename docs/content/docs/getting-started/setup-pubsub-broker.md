@@ -1,7 +1,8 @@
+###### PubSubBroker.cs
 ```csharp
-internal sealed class PubSubService : BrokerService
+internal sealed class PubSubBroker : BrokerService
 {
-    public PubSubService(StatefulServiceContext context)
+    public PubSubBroker(StatefulServiceContext context)
        : base(context)
     {
         //optional: provide a logging callback
