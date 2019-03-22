@@ -1,41 +1,33 @@
 <h1>Subscribing To Messages</h1>
 <section markdown>
   You can subscribe to messages using 
-  <a 
+  <a
     routerLink="/docs/how-to/subscribe-to-messages" 
-    fragment="using-actors">Actors</a>, using
+    fragment="using-services-with-base-class">Services with our base class</a>, using
   <a 
-    routerLink="/docs/how-to/subscribe-to-messages" 
-    fragment="using-services-with-base-class">Services with our base class</a>,
-  or using
-  <a 
-    routerLink="/docs/how-to/subscribe-to-messages" 
-    fragment="using-services-without-base-class">Services without our base class</a>.
-</section>
-<section
-  id="using-actors"
-  markdown>
-  #### Using Actors
-  Create a sample Actor that implements 'ISubscriberActor', to become a subscriber to messages. In this example,
-  the Actor called 'SubscribingActor' subscribes to messages of Type 'PublishedMessageOne'.
+    routerLink="/docs/how-to/subscribe-to-messages"
+    fragment="using-services-without-base-class">Services without our base class</a>, or using
+  <a
+    routerLink="/docs/how-to/subscribe-to-messages"
+    fragment="using-actors">Actors</a>.
 
-  Add a Reliable Stateless Actor project called 'SubscribingActor'. Add Nuget package 'ServiceFabric.PubSubActors'
-  to the 'SubscribingActor' project Add a project reference to the shared data contracts library ('DataContracts').
+  All projects containing subscribing Services or Actors must
 
-  Open the file 'SubscribingActor.cs' and replace the contents with the code below. **Notice that this Actor now
-  implements 'ISubscriberActor' indirectly.**
+  Install the Nuget package:
+  ```
+  dotnet add package SoCreate.ServiceFabric.PubSub -- version 9.0.0
+  ```
+
+  Add a project reference to the shared data contracts library.
 </section>
-<div markdown path="content/docs/how-to/subscribing-actors.md"></div>
 <section
   id="using-services-with-base-class"
   markdown>
   #### Using Services With our Base Class
 
-  Create a sample Service that extends SubscriberStatelessServiceBase. In this example, the Service called 
-  'SubscribingStatelessService' subscribes to messages of Type 'PublishedMessageOne' and 'PublishedMessageTwo'.
+  In this example, the Service called 'SubscribingStatelessService' subscribes to messages of Type 'PublishedMessageOne' and 'PublishedMessageTwo'.
 
-  Add a Reliable Stateless Service project called 'SubscribingStatelessService'. Add Nuget package 
-  'ServiceFabric.PubSubActors'. Add a project reference to the shared data contracts library ('DataContracts').
+  Add a Reliable Stateless Service project called 'SubscribingStatelessService'.
 
   Now open the file SubscribingStatelessService.cs in the project 'SubscribingStatelessService' and replace the 
   SubscribingStatelessService class with this code:
@@ -43,27 +35,43 @@
 <div markdown path="content/docs/how-to/subscribing-services-with-base-class.md"></div>
 <section markdown>
   The SubscriberStatelessServiceBase class automatically handles subscribing to the message types that were
-  registered using the `Subscribe` attribute when the service is 'opened'. To subscribe from a Stateful Service,
-  extend `SubscriberStatefulServiceBase` instead of `SubscribingStatelessServiceBase`.
+  registered using the `Subscribe` attribute when the service is 'opened'.
+
+  To subscribe from a Stateful Service, extend `SubscriberStatefulServiceBase` instead of `SubscribingStatelessServiceBase`.
 </section>
 <section
   id="using-services-without-base-class"
   markdown>
-  #### Using Services Without Our Base Class
+  #### Using Services Without the Base Class
 
-  If you don't want to inherit from our base classes, you can use the `StatefulSubscriberServiceBootstrapper` and
+  If you don't want to inherit from one of our base classes, you can set up your service like this:
+</section>
+<div markdown path="content/docs/how-to/subscribing-services-without-base-class.md"></div>
+<section markdown>
+  #### Using Services With The Bootstrapper
+
+  If you don't want to inherit from one of our base classes and still want to use the `Subscribe` attribute to automatically
+  subscribe and set up message handlers, you can use the `StatefulSubscriberServiceBootstrapper` and
   `StatelessSubscriberServiceBootstrapper` as a wrapper around the service factory delegate in Program.cs.
 
   The code in `Program` will look like this:
 </section>
-<div markdown path="content/docs/how-to/subscribing-services-without-base-class-program.md"></div>
+<div markdown path="content/docs/how-to/subscribing-services-with-bootstrapper-program.md"></div>
 <section markdown>
   The service looks like this:
 </section>
-<div markdown path="content/docs/how-to/subscribing-services-without-base-class-service.md"></div>
+<div markdown path="content/docs/how-to/subscribing-services-with-bootstrapper-service.md"></div>
 <section markdown>
-  Once the service gets an endpoint, it will automatically create subscriptions for all methods annotated with
-  the `Subscribe` attribute. For stateful services, use the `StatefulSubscriberServiceBootstrapper`.
-
-  Check the Demo project for a working reference implementation.
+  For stateful services, use the `StatefulSubscriberServiceBootstrapper`.
 </section>
+<section
+  id="using-actors"
+  markdown>
+  #### Using Actors
+  In this example, the Actor called 'SubscribingActor' subscribes to messages of Type 'PublishedMessageOne'.
+
+  Add a Reliable Stateless Actor project called 'SubscribingActor'.
+
+  Implement your Actor as follows:
+</section>
+<div markdown path="content/docs/how-to/subscribing-actors.md"></div>

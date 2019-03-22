@@ -18,42 +18,63 @@
     </a>
     <h5 class="nav__title">Getting Started</h5>
     <a
-      routerLink="/docs/getting-started/installation"
+      routerLink="/docs/getting-started/introduction"
       routerLinkActive="nav__item--active"
       class="nav__item"
       (click)="setShowNav(false)">
-      Installation
+      Introduction
     </a>
-  </div>
-  <div class="nav__block">
-    <h5 class="nav__title">How To</h5>
     <a
-      routerLink="/docs/how-to/add-to-project"
+      routerLink="/docs/getting-started/setup-pubsub-broker"
       routerLinkActive="nav__item--active"
       class="nav__item"
       (click)="setShowNav(false)">
-      Add To Project
+      Set Up PubSub Broker
     </a>
     <a
-      routerLink="/docs/how-to/data-contracts"
+      routerLink="/docs/getting-started/data-contracts"
       routerLinkActive="nav__item--active"
       class="nav__item"
       (click)="setShowNav(false)">
       Data Contracts
     </a>
     <a
-      routerLink="/docs/how-to/publish-messages"
+      routerLink="/docs/getting-started/setup-subscriber"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Set Up Subscriber
+    </a>
+    <a
+      routerLink="/docs/getting-started/publish-messages"
       routerLinkActive="nav__item--active"
       class="nav__item"
       (click)="setShowNav(false)">
       Publish Messages
     </a>
+  </div>
+  <div class="nav__block">
+    <h5 class="nav__title">How To</h5>
     <a
       routerLink="/docs/how-to/subscribe-to-messages"
       routerLinkActive="nav__item--active"
       class="nav__item"
       (click)="setShowNav(false)">
       Subscribe To Messages
+    </a>
+    <a
+      routerLink="/docs/how-to/broker-configuration"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Configure the Broker
+    </a>
+    <a
+      routerLink="/docs/how-to/broker-stats"
+      routerLinkActive="nav__item--active"
+      class="nav__item"
+      (click)="setShowNav(false)">
+      Broker Stats
     </a>
     <a
       routerLink="/docs/how-to/routing"

@@ -12,13 +12,16 @@ import { GithubCornerComponent } from './shared/github-corner.component';
 import { appRoutes } from './app.routes';
 import { DocsComponent } from './docs/docs.component';
 import { PubSubLogoComponent } from './shared/pub-sub-logo/pub-sub-logo.component';
-import { InstallationComponent } from './docs/getting-started/installation/installation.component';
-import { AddToProjectComponent } from './docs/how-to/add-to-project/add-to-project.component';
-import { DataContractsComponent } from './docs/how-to/data-contracts/data-contracts.component';
-import { PublishMessagesComponent } from './docs/how-to/publish-messages/publish-messages.component';
+import { IntroductionComponent } from './docs/getting-started/introduction/introduction.component';
+import { SetupPubSubBrokerComponent } from './docs/getting-started/setup-pubsub-broker/setup-pubsub-broker.component';
+import { DataContractsComponent } from './docs/getting-started/data-contracts/data-contracts.component';
+import { PublishMessagesComponent } from './docs/getting-started/publish-messages/publish-messages.component';
 import { SubscribeToMessagesComponent } from './docs/how-to/subscribe-to-messages/subscribe-to-messages.component';
 import { RoutingComponent } from './docs/how-to/routing/routing.component';
 import { Version8Component } from './docs/upgrading/version-8/version-8.component';
+import { SetupSubscriberComponent } from './docs/getting-started/setup-subscriber/setup-subscriber.component';
+import { BrokerConfigurationComponent } from './docs/how-to/broker-configuration/broker-configuration.component';
+import { BrokerStatsComponent } from './docs/how-to/broker-stats/broker-stats.component';
 
 
 @NgModule({
@@ -31,13 +34,16 @@ import { Version8Component } from './docs/upgrading/version-8/version-8.componen
     AboutComponent,
     HomeComponent,
     DocsComponent,
-    InstallationComponent,
-    AddToProjectComponent,
+    IntroductionComponent,
+    SetupPubSubBrokerComponent,
     DataContractsComponent,
     PublishMessagesComponent,
     SubscribeToMessagesComponent,
     RoutingComponent,
-    Version8Component
+    Version8Component,
+    SetupSubscriberComponent,
+    BrokerConfigurationComponent,
+    BrokerStatsComponent
   ],
   imports: [
     BrowserModule,
