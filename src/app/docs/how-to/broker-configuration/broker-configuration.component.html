@@ -5,7 +5,8 @@
   * ServiceEventSourceMessageCallback : When Set, this callback will be used to trace Service messages to.
   * ListenerName : The name that the `ServiceReplicaListener` instance will get.
   * DueTime : The interval to wait before starting to publish messages. (Default: 5s after Activation)
-  * Period : The interval to wait between batches of publishing messages. (Default: 5s)
+  * Period : The interval to wait between batches of publishing messages. (Default: 1s)
+  * ThrottleFactor : The amount to throttle queue processing when deliveries are failing.  Slow down queue processing by a factor of X. (Default 10)
   * MaxProcessingPeriod : The maximum period to process messages before allowing enqueuing. (Default 3s)
   * MaxDequeuesInOneIteration : The maximum number of messages to de-queue in one iteration of process queue. (Default 100)
 </section>
