@@ -12,13 +12,14 @@
 </section>
 <section markdown>
   #### Broker Events
-  The following events can be subscribed to by the ulser to implement additional logging or other functionality.
+  The following events can be subscribed to by the user to implement additional logging or other functionality.
 
-  * Subscribed
-  * Unsubscribed
-  * MessageReceived
-  * MessageDelivered
-  * MessageDeliveryFailed
+  * **Subscribed**: Fired when a Service or Actor subscribes to a message type.
+  * **Unsubscribed**: Fired when a Service or Actor unsubscribes to a message type.
+  * **MessagePublished**: Fired when a Service or Actor publishes a message, even if there are no subscribers, once per message.
+  * **MessageQueuedToSubscriber**: Fired when a published message is enqueued to a subscriber queue, once per subscriber.  (This was called "MessageReceived" in v9)
+  * **MessageDelivered**: Fired when a message is successfully delivered to a subscriber.
+  * **MessageDeliveryFailed**: Fired when a message fails to be delivered to a subscriber.
 
   To subscribe to events, override the SetUpEvents() method.
 </section>
