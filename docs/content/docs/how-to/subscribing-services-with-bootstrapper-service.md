@@ -28,7 +28,7 @@ internal sealed class SubscribingStatelessService : StatelessService, ISubscribe
         return Task.CompletedTask;
     }
 
-    [Subscribe]
+    [Subscribe(QueueType.Unordered)]
     private Task HandleMessageTwo(PublishedMessageTwo message)
     {
         ServiceEventSource.Current.ServiceMessage(Context, $"Processing PublishedMessageTwo: {message.Content}");

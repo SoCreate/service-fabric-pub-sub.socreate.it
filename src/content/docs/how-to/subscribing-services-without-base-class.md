@@ -13,7 +13,7 @@ internal sealed class SubscribingStatelessService : StatelessService, ISubscribe
     protected override async Task OnOpenAsync(CancellationToken cancellationToken)
     {
         await _brokerClient.SubscribeAsync<PublishedMessageOne>(this, HandleMessageOne);
-        await _brokerClient.SubscribeAsync<PublishedMessageTwo>(this, HandleMessageTwo);
+        await _brokerClient.SubscribeAsync<PublishedMessageTwo>(this, HandleMessageTwo, false);
     }
 
     public Task ReceiveMessageAsync(MessageWrapper messageWrapper)

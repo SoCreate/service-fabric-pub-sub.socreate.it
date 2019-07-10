@@ -17,4 +17,6 @@
 <section markdown>
   The SubscriberStatelessServiceBase class automatically handles subscribing to the message types that were
   registered using the `Subscribe` attribute when the service is 'opened'.
+
+  By default, messages are delivered in the order they are received using an `IReliableQueue`.  For higher throughput when strict ordering guarantees are not required, use the `QueryType.Unordered` option which will use an `IReliableConcurrentQueue`.
 </section>
