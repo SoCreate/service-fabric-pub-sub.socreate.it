@@ -3,9 +3,9 @@
   <blockquote>
       This experimental feature works only when using the <code>DefaultPayloadSerializer</code>
   </blockquote>
-  
+
   Routing adds support for an additional subscriber filter, based on message content.
-  
+
   #### Example
   Given this message type:
 </section>
@@ -15,6 +15,13 @@
 </section>
 <div markdown path="content/docs/how-to/routing-subscription.md"></div>
 <section markdown>
-  The routing key is queried by using JToken.SelectToken. More info
+  Or using the `Subscribe` attribute:
+</section>
+<div markdown path="content/docs/how-to/routing-subscription-attribute.md"></div>
+<section markdown>
+  The routing key name is queried by using JToken.SelectToken. More info
   <a href="https://www.newtonsoft.com/json/help/html/SelectToken.htm">here</a>.
+</section>
+<section markdown>
+  **The routing key value is a regex so complex matching can be applied.**
 </section>
