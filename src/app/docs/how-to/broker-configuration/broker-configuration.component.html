@@ -24,3 +24,15 @@
   To subscribe to events, override the SetUpEvents() method.
 </section>
 <div markdown path="content/docs/how-to/configure-broker-events.md"></div>
+<section markdown>
+  #### Custom Service Fabric Proxy Factories
+  By default, Service Fabric PubSub uses the default remoting communication messages which are xml serialized.
+  Some projects use custom remoting serialization (such as custom json serializers).
+  The `IProxyFactories` interface handles the creation of Proxy instances.
+  To customize this, you can implement your own version of `IProxyFactories` and pass it to the `BrokerService` and the
+  `BrokerClient` (via the `BrokerServiceLocator`).
+</section>
+<div markdown path="content/docs/how-to/customize-proxy-factories.md"></div>
+<section>
+  See the <a href="https://github.com/SoCreate/service-fabric-pub-sub/tree/master/examples/SoCreate.ServiceFabric.PubSubDemo.Common">Demo App</a> for a complete example.
+</section>
